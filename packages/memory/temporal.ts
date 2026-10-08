@@ -1,0 +1,3 @@
+export interface TemporalRuntime{startWorkflow<TInput,TResult>(name:string,input:TInput):Promise<TResult>;signalWorkflow<TSignal>(workflowId:string,signal:string,payload:TSignal):Promise<void>;scheduleWorkflow<TInput>(name:string,input:TInput,schedule:string):Promise<string>;}
+export const temporalMemoryWorkflows={ingestConversation:'memory.ingestConversation',consolidate:'memory.consolidate',resolveContradiction:'memory.resolveContradiction',applyExpiry:'memory.applyExpiry'} as const;
+export const temporalSentinelWorkflows={telemetryIngest:'sentinel.telemetryIngest',threatInvestigation:'sentinel.threatInvestigation',responseApproval:'sentinel.responseApproval',healthReconciliation:'sentinel.healthReconciliation'} as const;
