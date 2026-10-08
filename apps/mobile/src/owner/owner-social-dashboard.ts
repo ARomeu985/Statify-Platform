@@ -1,0 +1,3 @@
+import {ownerSocialPlatforms,type OwnerSocialAccount} from '../../../../packages/owner-social/social';
+export interface OwnerSocialDashboardModel{title:string;connectedAccounts:OwnerSocialAccount[];availablePlatforms:typeof ownerSocialPlatforms;actions:readonly ['Create Post','Schedule','Content Calendar','Connect Account','Analytics'];}
+export function buildOwnerSocialDashboard(accounts:OwnerSocialAccount[]=[]):OwnerSocialDashboardModel{return{title:'Statify Social Command Center',connectedAccounts:accounts,availablePlatforms:ownerSocialPlatforms,actions:['Create Post','Schedule','Content Calendar','Connect Account','Analytics']};}
