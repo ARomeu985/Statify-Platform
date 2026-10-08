@@ -1,0 +1,12 @@
+{
+  "name":"statify-platform",
+  "private":true,
+  "version":"0.3.0",
+  "workspaces":["apps/*","packages/*"],
+  "scripts":{
+    "typecheck":"tsc -p tsconfig.build.json --noEmit",
+    "build":"tsc -p tsconfig.build.json",
+    "test":"node --test dist/tests/**/*.test.js",
+    "verify":"npm run typecheck && npm run build && npm run test"
+  }
+}
