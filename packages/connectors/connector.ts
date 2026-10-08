@@ -1,0 +1,2 @@
+export interface Connector<TAccount=unknown>{readonly id:string;beginAuthorization(input:{tenantId:string;redirectUri:string}):Promise<{state:string;authorizationUrl:string}>;completeAuthorization(input:{tenantId:string;code:string;state:string}):Promise<TAccount>;refresh(accountId:string):Promise<TAccount>;disconnect(accountId:string):Promise<void>;}
+export const connectorSecurityContract={officialAuthorizationOnly:true,passwordCollection:false,secureTokenStorage:true,reconnectable:true,disconnectable:true,syncStatusVisible:true,pluginArchitecture:true} as const;
